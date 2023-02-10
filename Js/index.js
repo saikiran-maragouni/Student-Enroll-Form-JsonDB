@@ -174,24 +174,7 @@ function getStudentRollnoAsJsonObj() {
 }
 
 function getStudData() {
-//     var rollnoJsonObj=getStudentRollnoAsJsonObj();
-//     var getRequest=createGET_BY_KEYRequest(connectionToken,studentDatabaseName,studentRelationName,rollnoJsonObj);
-//    jQuery.ajaxSetup({async: false}); 
-//         var resJsonObj = executeCommandAtGivenBaseUrl(getRequest,jpdbBaseURL,jpbdIML);
-//         jQuery.ajaxSetup({async: true});
-//      if(resJsonObj.status===400){
-//          $("#saveBtn").prop('disabled',false);
-//          $("#resetBtn").prop('disabled',false);
-//          $("#Studname").focus();
-//      }   
-//      else if(resJsonObj.status===200){
-//          $('#Rollno').prop('disabled',true);
-//          fillData(resJsonObj);
-         
-//          $('#updateBtn').prop('disabled',false);
-//          $('#resetBtn').prop('disabled',false);
-//          $('#Studname').focus();
-//      }
+
 
 
     if ($('#Rollno').val() === "") { // if roll number is not given then disable all feild
@@ -204,12 +187,10 @@ function getStudData() {
         let studentRollnoJsonObj = getStudentRollnoAsJsonObj();
         // create GET Request object
         let getRequest = createGET_BY_KEYRequest(connectionToken, studentDatabaseName, studentRelationName, studentRollnoJsonObj);
-        alert("ok");
         jQuery.ajaxSetup({ async: false });
         // make GET request
         var resJsonObj = executeCommandAtGivenBaseUrl(getRequest, jpdbBaseURL, jpdbIRL);
         jQuery.ajaxSetup({ async: true });
-        alert("ok");
         // Enable all feild
         $('#Rollno').prop('disabled', false);
         $('#Studname').prop('disabled', false);
@@ -220,14 +201,12 @@ function getStudData() {
         
 
         if (resJsonObj.status === 400) { // if student is not exist already with same roll number then enable save and reset btn
-            alert("400");
             $('#resetBtn').prop('disabled', false);
             $('#saveBtn').prop('disabled', false);
             $('#updateBtn').prop('disabled', true);
             fillData("");
             $('#Studname').focus();
         } else if (resJsonObj.status === 200) {// if student is exist already with same roll number then enable update and reset btn
-            alert("200");
             $('#Rollno').prop('disabled', true);
             fillData(resJsonObj);
             $('#resetBtn').prop('disabled', false);
