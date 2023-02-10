@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="shortcut icon" href="https://cdn.iconscout.com/icon/premium/png-512-thumb/online-registration-4384700-3633046.png?f=avif&w=256" type="image/x-icon">
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <!-- jquery cdn  -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    
+    
+</head>
+
+<body style="background-image: url(Images/vecteezy_black-blue-background_5454929.jpg);">
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid header-container">
+                <span class="navbar-brand mb-0 h1  heading"><h1 style="color: #fff;">Student Enrollment Form</h1></span>
+            </div>
+        </nav>
+
+    </header>
+    <div class="container">
+        <form class="row g-3 form">
+            <div class="col-md-6">
+                <label for="Rollno" class="form-label">ROll NO</label>
+                <input type="text" class="form-control" id="Rollno"  onchange="getStudData()">
+            </div>
+            <div class="col-md-6">
+                <label for="Studname" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="Studname" disabled>
+            </div>
+            <div class="col-md-6">
+                <label for="class" class="form-label">Class</label>
+                <input type="text" class="form-control" id="class" placeholder=" Enter your class" disabled>
+            </div>
+            <div class="col-md-6">
+                <label for="DOB" class="form-label">Birth-Date</label>
+                <input type="date" class="form-control" id="DOB" placeholder="Date of Birth" disabled>
+            </div>
+            <div class="col-md-6">
+                <label for="Address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="Address" placeholder="1234 Main St" disabled>
+            </div>
+            <div class="col-md-6">
+                <label for="enrollmentDate" class="form-label">Enrollment-Date</label>
+                <input type="date" class="form-control" id="enrollmentDate" disabled>
+            </div>
+            <div class='buttons btn-continer'>
+
+                <button type="button" class="btn btn-primary btn-lg btn-space" id='saveBtn' onclick="saveData()"
+                    disabled>Save </button>
+                <button type="button" class="btn btn-primary btn-lg btn-space" id='updateBtn'
+                    onclick="changeData()" disabled>Update</button>
+                <button type="button" class="btn btn-primary btn-lg btn-space" id='resetBtn'
+                    onclick="resetForm()" disabled>Reset</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <h5 style="color: #fff;">©️<a href="https://saikiran-maragouni.github.io/SaikiranMaragouni/">Saikiran Maragouni</a></h5>
+    </footer>
+    <script src="http://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <script src="Js/index.js"></script>
+</body>
+
+</html>
